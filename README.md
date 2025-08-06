@@ -1,4 +1,6 @@
-# NwixOwOS
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yunfachi/NwixOwOS/master/assets/nwixowos-snowflake-colours.svg" width="250px" alt="NwixOwOS logo">
+</p>
 
 A complete redesign of NixOS into **NwixOwOS**, featuring updated logos, renamed distro, and more.
 
