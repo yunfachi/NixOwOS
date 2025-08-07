@@ -37,6 +37,7 @@
     overlays = {
       fastfetch = final: prev: call ./overlays/fastfetch final prev;
       neofetch = final: prev: call ./overlays/neofetch final prev;
+      nitch = final: prev: call ./overlays/nitch final prev;
       nixos-icons = final: prev: call ./overlays/nixos-icons final prev;
     };
 

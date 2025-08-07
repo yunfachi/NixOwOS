@@ -1,0 +1,85 @@
+diff --git a/src/assets/logos.nim b/src/assets/logos.nim
+index 35a5258..836f3fa 100644
+--- a/src/assets/logos.nim
++++ b/src/assets/logos.nim
+@@ -107,3 +107,9 @@ const
+  / _// _ \/ _  / -_) _ `/ |/ / _ \/ // / __/ /_/ /\ \
+ /___/_//_/\_,_/\__/\_,_/|___/\___/\_,_/_/  \____/___/
+ """
++  nwixowosLogo* = r"""
++    _  __       _      ____         ____  ____
++   / |/ /    __(_)_ __/ __ \_    __/ __ \/ __/
++  /    / |/|/ / /\ \ / /_/ / |/|/ / /_/ /\ \  
++ /_/|_/|__,__/_//_\_\\____/|__,__/\____/___/                                             
++"""
+\ No newline at end of file
+diff --git a/src/funcs/packages/getNixPkgs.nim b/src/funcs/packages/getNixPkgs.nim
+new file mode 100644
+index 0000000..81bb456
+--- /dev/null
++++ b/src/funcs/packages/getNixPkgs.nim
+@@ -0,0 +1,8 @@
++import
++  std/[strutils, osproc]
++
++proc getNixPkgs*(): string =
++  let
++    count = osproc.execCmdEx("nix-store -qR /run/current-system/sw ~/.nix-profile")[0]
++
++  result = $(count.split("\n").len - 1)
+diff --git a/src/nitches/getLogo.nim b/src/nitches/getLogo.nim
+index 0083184..75ddfd6 100644
+--- a/src/nitches/getLogo.nim
++++ b/src/nitches/getLogo.nim
+@@ -4,7 +4,7 @@ import
+ 
+ func getLogo*(distroId: string): tuple =
+   const
+-    coloredLogos: array[15, tuple] = [
++    coloredLogos: array[16, tuple] = [
+       (fgRed, nitchLogo),
+       (fgBlue, archLogo),
+       (fgRed, ubuntuLogo),
+@@ -19,7 +19,8 @@ func getLogo*(distroId: string): tuple =
+       (fgYellow, centosLogo),
+       (fgRed, redhatLogo),
+       (fgMagenta, gentooLogo),
+-      (fgMagenta, endeavourosLogo)
++      (fgMagenta, endeavourosLogo),
++      (fgCyan, nwixowosLogo)
+     ]
+ 
+   case distroId:
+@@ -65,5 +66,8 @@ func getLogo*(distroId: string): tuple =
+   of "endeavouros":
+     result = coloredLogos[14]
+ 
++  of "nwixowos":
++    result = coloredLogos[15]
++
+   else:
+     result = coloredLogos[0]
+diff --git a/src/nitches/getPkgs.nim b/src/nitches/getPkgs.nim
+index 38d5a1b..4c3fcf3 100644
+--- a/src/nitches/getPkgs.nim
++++ b/src/nitches/getPkgs.nim
+@@ -1,7 +1,7 @@
+ import
+   ../funcs/packages/[getPacmanPkgs, getRpmPkgs,
+                      getPortagePkgs, getXbpsPkgs,
+-                     getDpkgPkgs]
++                     getDpkgPkgs, getNixPkgs]
+ 
+ proc getPkgs*(distroId: string): string =
+   case distroId:
+@@ -37,6 +37,9 @@ proc getPkgs*(distroId: string): string =
+ 
+   of "pop":
+     result = getDpkgPkgs()
++  
++  of "nwixowos":
++    result = getNixPkgs()
+ 
+   else:
+     result = ">3"
+
