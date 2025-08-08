@@ -10,10 +10,11 @@
   cfg = config.nwixowos;
 in {
   options.nwixowos.os-release = with delib; {
-    enable = boolOption true;
-    changeId = boolOption true;
-    changeName = boolOption true;
-    setIdLike = boolOption true;
+    enable = description (boolOption true) "Whether to enable os-release configuration.";
+
+    changeId = description (boolOption true) "Whether to override the default distribution ID in the `os-release` file.";
+    changeName = description (boolOption true) "Whether to override the default distribution name in the `os-release` file.";
+    setIdLike = description (boolOption true) "Whether to set the `ID_LIKE` field in `os-release` file to \"nixos\".";
   };
 
   config = lib.mkIf (cfg.enable && cfg.os-release.enable) {

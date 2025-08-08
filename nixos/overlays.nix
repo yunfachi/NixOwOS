@@ -9,20 +9,22 @@
 }: let
   cfg = config.nwixowos;
 in {
-  options.nwixowos.overlays = with delib; {
-    enable = boolOption true;
+  options.nwixowos.overlays = with delib;
+    (lib.mapAttrs (
+        name: value:
+          description (boolOption cfg.overlays.enable) "Whether to enable the ${name} overlay."
+          // {
+            defaultText = lib.literalExpression "config.nwixowos.overlays.enable";
+          }
+      )
+      self.overlays)
+    // {
+      enable = description (boolOption true) "Whether to enable all NwixOwOS overlays by default.";
+    };
 
-    fastfetch = boolOption true;
-    neofetch = boolOption true;
-    nitch = boolOption true;
-    nixos-icons = boolOption true;
-  };
-
-  config = lib.mkIf (cfg.enable && cfg.overlays.enable) {
-    nixpkgs.overlays = with self.overlays;
-      lib.optionals cfg.overlays.fastfetch [fastfetch]
-      ++ lib.optionals cfg.overlays.neofetch [neofetch]
-      ++ lib.optionals cfg.overlays.nitch [nitch]
-      ++ lib.optionals cfg.overlays.nixos-icons [nixos-icons];
+  config = lib.mkIf cfg.enable {
+    nixpkgs.overlays = builtins.concatMap (
+      name: lib.optionals cfg.overlays.${name} [self.overlays.${name}]
+    ) (builtins.attrNames self.overlays);
   };
 }
