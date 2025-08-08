@@ -1,8 +1,8 @@
-diff --git a/src/logo/ascii/nwixowos.txt b/src/logo/ascii/nwixowos.txt
+diff --git a/src/logo/ascii/nixowos.txt b/src/logo/ascii/nixowos.txt
 new file mode 100644
 index 00000000..e169f578
 --- /dev/null
-+++ b/src/logo/ascii/nwixowos.txt
++++ b/src/logo/ascii/nixowos.txt
 @@ -0,0 +1,20 @@
 +$1           ▗▄▄▄       $2▗▄▄▄▄    ▄▄▄▖
 +$1           ▜███▙       $2▜███▙  ▟███▛
@@ -32,9 +32,9 @@ index 35eabdb6..b8df3e09 100644
              FF_COLOR_FG_CYAN,
          },
      },
-+    // NwixOwOS
++    // NixOwOS
 +    {
-+        .names = {"NwixOwOS"},
++        .names = {"NixOwOS"},
 +        .lines = FASTFETCH_DATATEXT_LOGO_NWIXOWOS,
 +        .colors = {
 +            "38;2;82;119;195",

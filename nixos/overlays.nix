@@ -7,19 +7,19 @@
   config,
   ...
 }: let
-  cfg = config.nwixowos;
+  cfg = config.nixowos;
 in {
-  options.nwixowos.overlays = with delib;
+  options.nixowos.overlays = with delib;
     (lib.mapAttrs (
         name: value:
           description (boolOption cfg.overlays.enable) "Whether to enable the ${name} overlay."
           // {
-            defaultText = lib.literalExpression "config.nwixowos.overlays.enable";
+            defaultText = lib.literalExpression "config.nixowos.overlays.enable";
           }
       )
       self.overlays)
     // {
-      enable = description (boolOption true) "Whether to enable all NwixOwOS overlays by default.";
+      enable = description (boolOption true) "Whether to enable all NixOwOS overlays by default.";
     };
 
   config = lib.mkIf cfg.enable {

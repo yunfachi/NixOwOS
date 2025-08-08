@@ -1,34 +1,34 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yunfachi/NwixOwOS/master/assets/nwixowos-snowflake-colours.svg" width="250px" alt="NwixOwOS logo">
+  <img src="https://raw.githubusercontent.com/yunfachi/NixOwOS/master/assets/nixowos-snowflake-colours.svg" width="250px" alt="NixOwOS logo">
 </p>
 
-A complete redesign of NixOS into **NwixOwOS**, featuring updated logos, renamed distro, and more.
+A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed distro, and more.
 
 ## Installation (NixOS)
 
 ### With Flakes
 
-To enable NwixOwOS, add `inputs.nwixowos` to your Flake and import the NixOS module:
+To enable NixOwOS, add `inputs.nixowos` to your Flake and import the NixOS module:
 
 ```nix
 {
   inputs = {
-    nwixowos = {
-      url = "github:yunfachi/nwixowos";
+    nixowos = {
+      url = "github:yunfachi/nixowos";
       # Optional:
       # inputs.nixpkgs.follows = "nixpkgs";
       # inputs.denix.follows = "denix";
     };
   };
 
-  outputs = { nixpkgs, nwixowos, ... }:
+  outputs = { nixpkgs, nixowos, ... }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         modules = [
-          nwixowos.nixosModules.default
+          nixowos.nixosModules.default
           {
-            # Enable NwixOwOS
-            nwixowos.enable = true;
+            # Enable NixOwOS
+            nixowos.enable = true;
           }
         ];
       };
@@ -43,17 +43,17 @@ Import directly from the Git repository:
 ```nix
 { pkgs, lib, ... }:
 let
-  nwixowos = import (builtins.fetchGit {
-    url = "https://github.com/yunfachi/nwixowos";
+  nixowos = import (builtins.fetchGit {
+    url = "https://github.com/yunfachi/nixowos";
   });
 in 
 {
   imports = [
-    nwixowos.nixosModules.default
+    nixowos.nixosModules.default
   ];
 
-  # Enable NwixOwOS
-  nwixowos.enable = true;
+  # Enable NixOwOS
+  nixowos.enable = true;
 }
 ```
 

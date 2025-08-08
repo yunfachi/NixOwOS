@@ -6,11 +6,11 @@ index 35a5258..836f3fa 100644
   / _// _ \/ _  / -_) _ `/ |/ / _ \/ // / __/ /_/ /\ \
  /___/_//_/\_,_/\__/\_,_/|___/\___/\_,_/_/  \____/___/
  """
-+  nwixowosLogo* = r"""
-+    _  __       _      ____         ____  ____
-+   / |/ /    __(_)_ __/ __ \_    __/ __ \/ __/
-+  /    / |/|/ / /\ \ / /_/ / |/|/ / /_/ /\ \  
-+ /_/|_/|__,__/_//_\_\\____/|__,__/\____/___/                                             
++  nixowosLogo* = r"""
++    _  ___      ____         ____  ____
++   / |/ (_)_ __/ __ \_    __/ __ \/ __/
++  /    / /\ \ / /_/ / |/|/ / /_/ /\ \  
++ /_/|_/_//_\_\\____/|__,__/\____/___/  
 +"""
 \ No newline at end of file
 diff --git a/src/funcs/packages/getNixPkgs.nim b/src/funcs/packages/getNixPkgs.nim
@@ -46,7 +46,7 @@ index 0083184..75ddfd6 100644
        (fgMagenta, gentooLogo),
 -      (fgMagenta, endeavourosLogo)
 +      (fgMagenta, endeavourosLogo),
-+      (fgCyan, nwixowosLogo)
++      (fgCyan, nixowosLogo)
      ]
  
    case distroId:
@@ -54,7 +54,7 @@ index 0083184..75ddfd6 100644
    of "endeavouros":
      result = coloredLogos[14]
  
-+  of "nwixowos":
++  of "nixowos":
 +    result = coloredLogos[15]
 +
    else:
@@ -77,7 +77,7 @@ index 38d5a1b..4c3fcf3 100644
    of "pop":
      result = getDpkgPkgs()
 +  
-+  of "nwixowos":
++  of "nixowos":
 +    result = getNixPkgs()
  
    else:

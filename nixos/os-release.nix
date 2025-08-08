@@ -7,9 +7,9 @@
   config,
   ...
 }: let
-  cfg = config.nwixowos;
+  cfg = config.nixowos;
 in {
-  options.nwixowos.os-release = with delib; {
+  options.nixowos.os-release = with delib; {
     enable = description (boolOption true) "Whether to enable os-release configuration.";
 
     changeId = description (boolOption true) "Whether to override the default distribution ID in the `os-release` file.";

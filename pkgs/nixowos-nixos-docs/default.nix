@@ -16,6 +16,6 @@
     #warningsAreErrors = false;
   };
 in
-  runCommand "nwixowos-nixos-docs.md" {} ''
+  runCommand "nixowos-nixos-docs.md" {} ''
     cat ${optionsDoc.optionsCommonMark} >> $out
   ''

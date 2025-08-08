@@ -6,7 +6,7 @@ index b7086bd5..04f38952 100755
  EOF
          ;;
  
-+        "NwixOwOS"*)
++        "NixOwOS"*)
 +            set_colors 4 67 210 31 4
 +            read -rd '' ascii_data <<'EOF'
 +${c1}           ▗▄▄▄       ${c2}▗▄▄▄▄    ▄▄▄▖

@@ -1,5 +1,5 @@
 {
-  description = "Complete redesign of NixOS into NwixOwOS";
+  description = "Complete redesign of NixOS into NixOwOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
@@ -35,8 +35,8 @@
     forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
   in {
     nixosModules = rec {
-      default = nwixowos;
-      nwixowos = call ./nixos;
+      default = nixowos;
+      nixowos = call ./nixos;
     };
 
     overlays = {
@@ -50,8 +50,8 @@
       system: let
         callPackage = file: nixpkgs.legacyPackages.${system}.callPackage (_call file {inherit system;}) {};
       in {
-        nwixowos-icons = callPackage ./pkgs/nwixowos-icons;
-        nwixowos-nixos-docs = callPackage ./pkgs/nwixowos-nixos-docs;
+        nixowos-icons = callPackage ./pkgs/nixowos-icons;
+        nixowos-nixos-docs = callPackage ./pkgs/nixowos-nixos-docs;
       }
     );
 
@@ -61,9 +61,9 @@
         hooks = {
           alejandra.enable = true;
 
-          nwixowos-generate-docs = {
+          nixowos-generate-docs = {
             enable = true;
-            name = "NwixOwOS generate docs";
+            name = "NixOwOS generate docs";
             files = ".*";
             language = "system";
             entry =

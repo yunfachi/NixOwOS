@@ -8,9 +8,9 @@ index 48b96d215..39192937e 100755
  
 +            elif [[ -f /etc/NIXOS ]]; then
 +                case $distro_shorthand in
-+                    on) distro="NwixOwOS $(nixos-version | awk '{print substr($1,0,5),$2}')" ;;
-+                    tiny) distro="NwixOwOS" ;;
-+                    *) distro="NwixOwOS $(nixos-version)" ;;
++                    on) distro="NixOwOS $(nixos-version | awk '{print substr($1,0,5),$2}')" ;;
++                    tiny) distro="NixOwOS" ;;
++                    *) distro="NixOwOS $(nixos-version)" ;;
 +                esac
 +
              elif type -p pveversion >/dev/null; then

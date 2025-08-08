@@ -8,7 +8,7 @@ _: finalPkgs: prevPkgs: {
           name = "avoid_overwriting_gio_extra_modules_env_var.patch";
         })
         ./improve_detect_nixos_version.patch
-        ./create_nwixowos_logo.patch
+        ./create_nixowos_logo.patch
       ];
     }
   );

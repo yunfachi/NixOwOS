@@ -1,6 +1,6 @@
-## nwixowos\.enable
+## nixowos\.enable
 
-Whether to enable the NwixOwOS module for NixOS\.
+Whether to enable the NixOwOS module for NixOS\.
 
 
 
@@ -14,7 +14,7 @@ boolean
 
 
 
-## nwixowos\.id
+## nixowos\.id
 
 
 
@@ -28,11 +28,11 @@ string
 
 
 *Default:*
-` "nwixowos" `
+` "nixowos" `
 
 
 
-## nwixowos\.name
+## nixowos\.name
 
 
 
@@ -46,11 +46,11 @@ string
 
 
 *Default:*
-` "NwixOwOS" `
+` "NixOwOS" `
 
 
 
-## nwixowos\.os-release\.enable
+## nixowos\.os-release\.enable
 
 
 
@@ -68,7 +68,7 @@ boolean
 
 
 
-## nwixowos\.os-release\.changeId
+## nixowos\.os-release\.changeId
 
 
 
@@ -86,7 +86,7 @@ boolean
 
 
 
-## nwixowos\.os-release\.changeName
+## nixowos\.os-release\.changeName
 
 
 
@@ -104,7 +104,7 @@ boolean
 
 
 
-## nwixowos\.os-release\.setIdLike
+## nixowos\.os-release\.setIdLike
 
 
 
@@ -122,11 +122,11 @@ boolean
 
 
 
-## nwixowos\.overlays\.enable
+## nixowos\.overlays\.enable
 
 
 
-Whether to enable all NwixOwOS overlays by default\.
+Whether to enable all NixOwOS overlays by default\.
 
 
 
@@ -140,7 +140,7 @@ boolean
 
 
 
-## nwixowos\.overlays\.fastfetch
+## nixowos\.overlays\.fastfetch
 
 
 
@@ -154,11 +154,11 @@ boolean
 
 
 *Default:*
-` config.nwixowos.overlays.enable `
+` config.nixowos.overlays.enable `
 
 
 
-## nwixowos\.overlays\.neofetch
+## nixowos\.overlays\.neofetch
 
 
 
@@ -172,11 +172,11 @@ boolean
 
 
 *Default:*
-` config.nwixowos.overlays.enable `
+` config.nixowos.overlays.enable `
 
 
 
-## nwixowos\.overlays\.nitch
+## nixowos\.overlays\.nitch
 
 
 
@@ -190,11 +190,11 @@ boolean
 
 
 *Default:*
-` config.nwixowos.overlays.enable `
+` config.nixowos.overlays.enable `
 
 
 
-## nwixowos\.overlays\.nixos-icons
+## nixowos\.overlays\.nixos-icons
 
 
 
@@ -208,6 +208,6 @@ boolean
 
 
 *Default:*
-` config.nwixowos.overlays.enable `
+` config.nixowos.overlays.enable `
 
 
