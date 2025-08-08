@@ -4,11 +4,21 @@
 
 A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed distro, and more.
 
-## Installation (NixOS)
+## Usage
+
+A full list of available NixOS module options can be found in [./nixos/README.md](./nixos/README.md).
+
+> [!NOTE]
+> You probably don't need the NixOwOS Home Manager module if you're using the **Home Manager NixOS module** with `useGlobalPkgs = true;`,
+> because the NixOwOS Home Manager module only adds `nixpkgs.overlays`, and `useGlobalPkgs` disables that in favor of the system configuration's `pkgs`.
+
+A full list of available Home Manager module options can be found in [./home/README.md](./home/README.md).
+
+## Installation (NixOS, Home Manager)
 
 ### With Flakes
 
-To enable NixOwOS, add `inputs.nixowos` to your Flake and import the NixOS module:
+To enable NixOwOS, add `inputs.nixowos` to your Flake and import either the NixOS or Home Manager module:
 
 ```nix
 {
@@ -21,11 +31,21 @@ To enable NixOwOS, add `inputs.nixowos` to your Flake and import the NixOS modul
     };
   };
 
-  outputs = { nixpkgs, nixowos, ... }:
+  outputs = { nixpkgs, home-manager, nixowos, ... }:
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         modules = [
           nixowos.nixosModules.default
+          {
+            # Enable NixOwOS
+            nixowos.enable = true;
+          }
+        ];
+      };
+      
+      homeConfigurations.standaloneHomeManagerConfig = home-manager.lib.homeManagerConfiguration {
+        modules = [
+          nixowos.homeManagerModules.default
           {
             # Enable NixOwOS
             nixowos.enable = true;
@@ -50,6 +70,8 @@ in
 {
   imports = [
     nixowos.nixosModules.default
+    # or, if you're using Home Manager:
+    # nixowos.homeManagerModules.default
   ];
 
   # Enable NixOwOS

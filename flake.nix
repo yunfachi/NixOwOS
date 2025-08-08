@@ -26,6 +26,7 @@
         {
           inherit self;
           delib = denix.lib;
+          root = ./.;
           assets = ./assets;
         }
         // extraArgs
@@ -39,6 +40,11 @@
       nixowos = call ./nixos;
     };
 
+    homeManagerModules = rec {
+      default = nixowos;
+      nixowos = call ./home;
+    };
+
     overlays = {
       fastfetch = final: prev: call ./overlays/fastfetch final prev;
       neofetch = final: prev: call ./overlays/neofetch final prev;
@@ -48,10 +54,11 @@
 
     legacyPackages = forAllSystems (
       system: let
-        callPackage = file: nixpkgs.legacyPackages.${system}.callPackage (_call file {inherit system;}) {};
+        callPackage = file: nixpkgs.legacyPackages.${system}.callPackage (_call file {inherit system;});
       in {
-        nixowos-icons = callPackage ./pkgs/nixowos-icons;
-        nixowos-nixos-docs = callPackage ./pkgs/nixowos-nixos-docs;
+        nixowos-icons = callPackage ./pkgs/nixowos-icons {};
+        nixowos-nixos-docs = callPackage ./pkgs/nixowos-docs {moduleSystem = "nixos";};
+        nixowos-home-docs = callPackage ./pkgs/nixowos-docs {moduleSystem = "home";};
       }
     );
 
@@ -69,7 +76,9 @@
             entry =
               (nixpkgs.legacyPackages.${system}.writeShellScript "nixowos-generate-docs.sh" ''
                 cat $(nix build .#legacyPackages.${system}.nixowos-nixos-docs --print-out-paths --no-link) > ./nixos/README.md
+                cat $(nix build .#legacyPackages.${system}.nixowos-home-docs --print-out-paths --no-link) > ./home/README.md
                 git add ./nixos/README.md
+                git add ./home/README.md
               '').outPath;
             stages = ["pre-commit"];
           };

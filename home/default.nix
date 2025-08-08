@@ -4,7 +4,7 @@
   ...
 } @ args: {
   options.nixowos = with delib; {
-    enable = description (boolOption false) "Whether to enable the NixOwOS module for NixOS.";
+    enable = description (boolOption false) "Whether to enable the NixOwOS module for Home Manager.";
   };
 
   imports =

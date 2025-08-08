@@ -2,11 +2,18 @@
   lib,
   runCommand,
   nixosOptionsDoc,
+  moduleSystem,
   ...
 }: let
   eval = lib.evalModules {
     modules = [
-      self.nixosModules.default
+      {
+        nixos = self.nixosModules.default;
+        home = self.homeManagerModules.default;
+      }
+      .${
+        moduleSystem
+      }
       {_module.check = false;}
     ];
   };
@@ -16,6 +23,6 @@
     #warningsAreErrors = false;
   };
 in
-  runCommand "nixowos-nixos-docs.md" {} ''
+  runCommand "nixowos-${moduleSystem}-docs.md" {} ''
     cat ${optionsDoc.optionsCommonMark} >> $out
   ''
