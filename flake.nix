@@ -46,6 +46,7 @@
         callPackage = file: nixpkgs.legacyPackages.${system}.callPackage (_call file {inherit system;}) {};
       in {
         nwixowos-icons = callPackage ./pkgs/nwixowos-icons;
+        nwixowos-nixos-docs = callPackage ./pkgs/nwixowos-nixos-docs;
       }
     );
   };
