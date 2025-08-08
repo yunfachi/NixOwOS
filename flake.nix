@@ -3,16 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
-    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     denix = {
       url = "github:yunfachi/denix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
+    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
   };
 
   outputs = {
     nixpkgs,
     denix,
+    pre-commit-hooks,
     self,
     ...
   }: let
@@ -49,5 +54,34 @@
         nwixowos-nixos-docs = callPackage ./pkgs/nwixowos-nixos-docs;
       }
     );
+
+    checks = forAllSystems (system: {
+      pre-commit-check = pre-commit-hooks.lib.${system}.run {
+        src = ./.;
+        hooks = {
+          alejandra.enable = true;
+
+          nwixowos-generate-docs = {
+            enable = true;
+            name = "NwixOwOS generate docs";
+            files = ".*";
+            language = "system";
+            entry =
+              (nixpkgs.legacyPackages.${system}.writeShellScript "nixowos-generate-docs.sh" ''
+                cat $(nix build .#legacyPackages.${system}.nixowos-nixos-docs --print-out-paths --no-link) > ./nixos/README.md
+                git add ./nixos/README.md
+              '').outPath;
+            stages = ["pre-commit"];
+          };
+        };
+      };
+    });
+
+    devShells = forAllSystems (system: {
+      default = nixpkgs.legacyPackages.${system}.mkShell {
+        inherit (self.checks.${system}.pre-commit-check) shellHook;
+        buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+      };
+    });
   };
 }
