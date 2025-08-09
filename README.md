@@ -4,6 +4,12 @@
 
 A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed distro, and more.
 
+## Screenshots
+
+<p align="center">
+  <a href="./assets/screenshots/fastfetch.png"><img src="./assets/screenshots/fastfetch.png" width="65%"></a>
+</p>
+
 ## Usage
 
 A full list of available NixOS module options can be found in [./nixos/README.md](./nixos/README.md).
