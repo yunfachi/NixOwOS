@@ -86,6 +86,24 @@ boolean
 
 
 
+## nixowos\.overlays\.hyfetch
+
+
+
+Whether to enable the hyfetch overlay\.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` config.nixowos.overlays.enable `
+
+
+
 ## nixowos\.overlays\.neofetch
 
 
