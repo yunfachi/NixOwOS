@@ -14,17 +14,13 @@ A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed 
 
 A full list of available NixOS module options can be found in [./nixos/README.md](./nixos/README.md).
 
-> [!NOTE]
-> You probably don't need the NixOwOS Home Manager module if you're using the **Home Manager NixOS module** with `useGlobalPkgs = true;`,
-> because the NixOwOS Home Manager module only adds `nixpkgs.overlays`, and `useGlobalPkgs` disables that in favor of the system configuration's `pkgs`.
-
 A full list of available Home Manager module options can be found in [./home/README.md](./home/README.md).
 
 ## Installation (NixOS, Home Manager)
 
 ### With Flakes
 
-To enable NixOwOS, add `inputs.nixowos` to your Flake and import either the NixOS or Home Manager module:
+To enable NixOwOS, add `inputs.nixowos` to your Flake and import both the NixOS and Home Manager modules - if you use them both. Otherwise, just import the module you need.
 
 ```nix
 {
@@ -41,26 +37,35 @@ To enable NixOwOS, add `inputs.nixowos` to your Flake and import either the NixO
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         modules = [
+          # ...
           nixowos.nixosModules.default
           {
-            # Enable NixOwOS
-            nixowos.enable = true;
+            home-manager.users.MYUSER.imports = [
+              nixowos.homeManagerModules.default
+            ];
           }
         ];
       };
       
       homeConfigurations.standaloneHomeManagerConfig = home-manager.lib.homeManagerConfiguration {
         modules = [
+          # ...
           nixowos.homeManagerModules.default
-          {
-            # Enable NixOwOS
-            nixowos.enable = true;
-          }
         ];
       };
     };
 }
 ```
+
+Next, enable NixOwOS by adding this to your NixOS and Home Manager configurations:
+
+```nix
+{
+  nixowos.enable = true;
+}
+```
+
+If you use both NixOS and Home Manager, add it to **both** configurations. Otherwise, add it only to the one you're using.
 
 ### Without Flakes
 
