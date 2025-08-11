@@ -2,19 +2,19 @@
   delib,
   root,
   ...
-} @ args: {
+}@args:
+{
   options.nixowos = with delib; {
     enable = description (boolOption false) "Whether to enable the NixOwOS module for Home Manager.";
   };
 
-  imports =
-    [
-      (import (root + /shared) args)
-    ]
-    ++ map (file: import file args) (
-      delib.umport {
-        path = ./.;
-        exclude = [./default.nix];
-      }
-    );
+  imports = [
+    (import (root + /shared) args)
+  ]
+  ++ map (file: import file args) (
+    delib.umport {
+      path = ./.;
+      exclude = [ ./default.nix ];
+    }
+  );
 }

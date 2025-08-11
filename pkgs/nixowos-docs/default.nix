@@ -1,28 +1,28 @@
-{self, ...}: {
+{ self, ... }:
+{
   lib,
   runCommand,
   nixosOptionsDoc,
   moduleSystem,
   ...
-}: let
+}:
+let
   eval = lib.evalModules {
     modules = [
       {
         nixos = self.nixosModules.default;
         home = self.homeManagerModules.default;
       }
-      .${
-        moduleSystem
-      }
-      {_module.check = false;}
+      .${moduleSystem}
+      { _module.check = false; }
     ];
   };
 
   optionsDoc = nixosOptionsDoc {
-    options = lib.removeAttrs eval.options ["_module"];
+    options = lib.removeAttrs eval.options [ "_module" ];
     #warningsAreErrors = false;
   };
 in
-  runCommand "nixowos-${moduleSystem}-docs.md" {} ''
-    cat ${optionsDoc.optionsCommonMark} >> $out
-  ''
+runCommand "nixowos-${moduleSystem}-docs.md" { } ''
+  cat ${optionsDoc.optionsCommonMark} >> $out
+''

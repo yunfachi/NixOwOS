@@ -1,4 +1,5 @@
-{assets, ...}: {
+{ assets, ... }:
+{
   stdenv,
   imagemagick,
   lib,
@@ -10,7 +11,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = assets;
 
-  nativeBuildInputs = [imagemagick];
+  nativeBuildInputs = [ imagemagick ];
 
   installPhase = ''
     set -euo pipefail
@@ -40,7 +41,7 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Icons of the NixOwOS logo, in Freedesktop Icon Directory Layout";
     homepage = "https://github.com/yunfachi/NixOwOS";
     license = lib.licenses.cc-by-40;
-    maintainers = with lib.maintainers; [yunfachi];
+    maintainers = with lib.maintainers; [ yunfachi ];
     platforms = lib.platforms.all;
   };
 })

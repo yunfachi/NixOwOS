@@ -2,13 +2,16 @@
   delib,
   self,
   ...
-}: {
+}:
+{
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.nixowos;
-in {
+in
+{
   options.nixowos.os-release = with delib; {
     enable = description (boolOption true) "Whether to enable os-release configuration.";
 
