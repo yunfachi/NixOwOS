@@ -41,7 +41,7 @@ To enable NixOwOS, add `inputs.nixowos` to your Flake and import both the NixOS 
           nixowos.nixosModules.default
           {
             home-manager.users.MYUSER.imports = [
-              nixowos.homeManagerModules.default
+              nixowos.homeModules.default
             ];
           }
         ];
@@ -50,7 +50,7 @@ To enable NixOwOS, add `inputs.nixowos` to your Flake and import both the NixOS 
       homeConfigurations.standaloneHomeManagerConfig = home-manager.lib.homeManagerConfiguration {
         modules = [
           # ...
-          nixowos.homeManagerModules.default
+          nixowos.homeModules.default
         ];
       };
     };
@@ -82,7 +82,7 @@ in
   imports = [
     nixowos.nixosModules.default
     # or, if you're using Home Manager:
-    # nixowos.homeManagerModules.default
+    # nixowos.homeModules.default
   ];
 
   # Enable NixOwOS

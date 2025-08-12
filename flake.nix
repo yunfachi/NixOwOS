@@ -45,10 +45,12 @@
         nixowos = call ./nixos;
       };
 
-      homeManagerModules = rec {
+      homeModules = rec {
         default = nixowos;
         nixowos = call ./home;
       };
+
+      homeManagerModules = nixpkgs.lib.warn "nixowos: flake output `homeManagerModules` has been renamed to `homeModules`." self.homeModules;
 
       overlays = {
         fastfetch = final: prev: call ./overlays/fastfetch final prev;

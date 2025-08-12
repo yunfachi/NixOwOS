@@ -11,7 +11,7 @@ let
     modules = [
       {
         nixos = self.nixosModules.default;
-        home = self.homeManagerModules.default;
+        home = self.homeModules.default;
       }
       .${moduleSystem}
       { _module.check = false; }
