@@ -66,6 +66,7 @@
           callPackage = file: nixpkgs.legacyPackages.${system}.callPackage (_call file { inherit system; });
         in
         {
+          catgirldownloader = callPackage ./pkgs/catgirldownloader { };
           nixowos-icons = callPackage ./pkgs/nixowos-icons { };
           nixowos-nixos-docs = callPackage ./pkgs/nixowos-docs { moduleSystem = "nixos"; };
           nixowos-home-docs = callPackage ./pkgs/nixowos-docs { moduleSystem = "home"; };
