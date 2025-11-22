@@ -1,4 +1,4 @@
 { self, ... }:
 finalPkgs: prevPkgs: {
-  nixos-icons = self.legacyPackages.${finalPkgs.system}.nixowos-icons;
+  nixos-icons = self.legacyPackages.${finalPkgs.stdenv.hostPlatform.system}.nixowos-icons;
 }
