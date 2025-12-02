@@ -1,4 +1,5 @@
 { self, ... }:
-finalPkgs: prevPkgs: {
-  nixos-icons = self.legacyPackages.${finalPkgs.stdenv.hostPlatform.system}.nixowos-icons;
+{
+  flake.overlays.nixos-icons =
+    finalPkgs: prevPkgs: self.packages.${finalPkgs.stdenv.hostPlatform.system}.nixowos-icons;
 }

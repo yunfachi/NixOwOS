@@ -12,9 +12,9 @@ A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed 
 
 ## Usage
 
-A full list of available NixOS module options can be found in [./nixos/README.md](./nixos/README.md).
+A full list of available NixOS module options can be found in [./nixos-options.md](./nixos-options.md).
 
-A full list of available Home Manager module options can be found in [./home/README.md](./home/README.md).
+A full list of available Home Manager module options can be found in [./home-options.md](./home-options.md).
 
 ## Installation (NixOS, Home Manager)
 
