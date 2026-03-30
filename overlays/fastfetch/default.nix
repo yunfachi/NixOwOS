@@ -1,11 +1,11 @@
 {
-  flake.overlays.fastfetch =
-    finalPkgs: prevPkgs:
-    prevPkgs.fastfetch.overrideAttrs (
+  flake.overlays.fastfetch = finalPkgs: prevPkgs: {
+    fastfetch = prevPkgs.fastfetch.overrideAttrs (
       finalAttrs: prevAttrs: {
         patches = [
           ./create_nixowos_logo.patch
         ];
       }
     );
+  };
 }

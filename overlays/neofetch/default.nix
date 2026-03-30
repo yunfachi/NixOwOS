@@ -1,7 +1,6 @@
 {
-  flake.overlays.neofetch =
-    finalPkgs: prevPkgs:
-    prevPkgs.neofetch.overrideAttrs (
+  flake.overlays.neofetch = finalPkgs: prevPkgs: {
+    neofetch = prevPkgs.neofetch.overrideAttrs (
       finalAttrs: prevAttrs: {
         patches = [
           (finalPkgs.fetchpatch {
@@ -14,4 +13,5 @@
         ];
       }
     );
+  };
 }

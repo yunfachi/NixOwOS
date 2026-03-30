@@ -1,11 +1,11 @@
 {
-  flake.overlays.hyfetch =
-    finalPkgs: prevPkgs:
-    prevPkgs.hyfetch.overrideAttrs (
+  flake.overlays.hyfetch = finalPkgs: prevPkgs: {
+    hyfetch = prevPkgs.hyfetch.overrideAttrs (
       finalAttrs: prevAttrs: {
         patches = [
           ./add_nixowos_support.patch
         ];
       }
     );
+  };
 }
