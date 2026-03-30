@@ -46,7 +46,7 @@
             generateModules = false;
           };
 
-          denix.imports = [(denix.lib.moduleSystem "home" {})];
+          denix.imports = [ (denix.lib.moduleSystem "home" { }) ];
 
           flake = {
             nixosModules = {
@@ -63,6 +63,12 @@
               };
             };
           };
+
+          perSystem =
+            { pkgs, ... }:
+            {
+              formatter = pkgs.nixfmt-tree;
+            };
         }
       );
 }
