@@ -1,238 +1,4 @@
-## home-manager\.enableLegacyProfileManagement
-
-
-
-Whether to enable legacy profile management during activation\. When
-enabled, the Home Manager activation will produce a per-user
-` home-manager ` Nix profile, just like in the standalone installation of
-Home Manager\. Typically, this is not desired when Home Manager is
-embedded in the system configuration\.
-
-
-
-*Type:*
-boolean
-
-
-
-*Default:*
-` false `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.backupFileExtension
-
-On activation move existing files by appending the given
-file extension rather than exiting with an error\.
-
-
-
-*Type:*
-null or string
-
-
-
-*Default:*
-` null `
-
-
-
-*Example:*
-` "backup" `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.extraSpecialArgs
-
-
-
-Extra ` specialArgs ` passed to Home Manager\. This
-option can be used to pass additional arguments to all modules\.
-
-
-
-*Type:*
-attribute set
-
-
-
-*Default:*
-` { } `
-
-
-
-*Example:*
-` { inherit emacs-overlay; } `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.overwriteBackup
-
-
-
-Whether to enable forced overwriting of existing backup files when using ` backupFileExtension `
-\.
-
-
-
-*Type:*
-boolean
-
-
-
-*Default:*
-` false `
-
-
-
-*Example:*
-` true `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.sharedModules
-
-
-
-Extra modules added to all users\.
-
-
-
-*Type:*
-list of raw value
-
-
-
-*Default:*
-` [ ] `
-
-
-
-*Example:*
-` [ { home.packages = [ nixpkgs-fmt ]; } ] `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.useGlobalPkgs
-
-
-
-Whether to enable using the system configuration’s ` pkgs `
-argument in Home Manager\. This disables the Home Manager
-options ` nixpkgs.* `\.
-
-
-
-*Type:*
-boolean
-
-
-
-*Default:*
-` false `
-
-
-
-*Example:*
-` true `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.useUserPackages
-
-
-
-Whether to enable installation of user packages through the
-` users.users.<name>.packages ` option\.
-
-
-
-*Type:*
-boolean
-
-
-
-*Default:*
-` false `
-
-
-
-*Example:*
-` true `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.users
-
-
-
-Per-user Home Manager configuration\.
-
-
-
-*Type:*
-attribute set of (Home Manager module)
-
-
-
-*Default:*
-` { } `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
-## home-manager\.verbose
-
-
-
-Whether to enable verbose output on activation\.
-
-
-
-*Type:*
-boolean
-
-
-
-*Default:*
-` false `
-
-
-
-*Example:*
-` true `
-
-*Declared by:*
- - [/nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common\.nix](file:///nix/store/c2gc2askw1770wf0q3y9i860fk6cj0b7-source/nixos/common.nix)
-
-
-
 ## nixowos\.enable
-
-
 
 Whether to enable the NixOwOS module\.
 
@@ -244,10 +10,13 @@ boolean
 
 
 *Default:*
-` false `
+
+```nix
+false
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default.nix)
 
 
 
@@ -265,10 +34,13 @@ string
 
 
 *Default:*
-` "nixowos" `
+
+```nix
+"nixowos"
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default.nix)
 
 
 
@@ -286,10 +58,13 @@ string
 
 
 *Default:*
-` "NixOwOS" `
+
+```nix
+"NixOwOS"
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default.nix)
 
 
 
@@ -307,10 +82,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release.nix)
 
 
 
@@ -328,10 +106,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release.nix)
 
 
 
@@ -349,10 +130,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release.nix)
 
 
 
@@ -370,10 +154,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/os-release.nix)
 
 
 
@@ -391,10 +178,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays.nix)
 
 
 
@@ -412,10 +202,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays.nix)
 
 
 
@@ -433,10 +226,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays.nix)
 
 
 
@@ -454,10 +250,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays.nix)
 
 
 
@@ -475,10 +274,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays.nix)
 
 
 
@@ -496,10 +298,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/overlays.nix)
 
 
 
@@ -520,6 +325,6 @@ boolean
 If ` specialArgs.osConfig.home-manager.useGlobalPkgs ` exists, then its negated value; otherwise, ` true `\.
 
 *Declared by:*
- - [/nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/svfppharscqh01bnkmyhyb75vlci16v4-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default\.nix](file:///nix/store/p609vl0605j15fv0hmrfc3i7q3ka9jmk-source/src/default.nix)
 
 

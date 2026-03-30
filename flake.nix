@@ -46,7 +46,7 @@
             generateModules = false;
           };
 
-          denix.imports = with denix.denixModules; [ homeManager ];
+          denix.imports = [(denix.lib.moduleSystem "home" {})];
 
           flake = {
             nixosModules = {

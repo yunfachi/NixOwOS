@@ -10,10 +10,13 @@ boolean
 
 
 *Default:*
-` false `
+
+```nix
+false
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default.nix)
 
 
 
@@ -31,10 +34,13 @@ string
 
 
 *Default:*
-` "nixowos" `
+
+```nix
+"nixowos"
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default.nix)
 
 
 
@@ -52,10 +58,13 @@ string
 
 
 *Default:*
-` "NixOwOS" `
+
+```nix
+"NixOwOS"
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default.nix)
 
 
 
@@ -73,10 +82,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release.nix)
 
 
 
@@ -94,10 +106,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release.nix)
 
 
 
@@ -115,10 +130,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release.nix)
 
 
 
@@ -136,10 +154,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/os-release.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/os-release.nix)
 
 
 
@@ -157,10 +178,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays.nix)
 
 
 
@@ -178,10 +202,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays.nix)
 
 
 
@@ -199,10 +226,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays.nix)
 
 
 
@@ -220,10 +250,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays.nix)
 
 
 
@@ -241,10 +274,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays.nix)
 
 
 
@@ -262,10 +298,13 @@ boolean
 
 
 *Default:*
-` config.nixowos.overlays.enable `
+
+```nix
+config.nixowos.overlays.enable
+```
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/overlays.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/overlays.nix)
 
 
 
@@ -286,6 +325,6 @@ boolean
 If ` specialArgs.osConfig.home-manager.useGlobalPkgs ` exists, then its negated value; otherwise, ` true `\.
 
 *Declared by:*
- - [/nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default\.nix, via option denix\.modules\.nixowos\.options](file:///nix/store/1iprmf5sf4vamp1jm4hlcqznlnymr7wn-source/src/default.nix, via option denix.modules.nixowos.options)
+ - [/nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default\.nix](file:///nix/store/9ind4kr5l3dkzvp8vxsfizkgdbl7xjrq-source/src/default.nix)
 
 
