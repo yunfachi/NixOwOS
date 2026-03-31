@@ -16,7 +16,7 @@ false
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default.nix)
 
 
 
@@ -40,7 +40,7 @@ string
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default.nix)
 
 
 
@@ -64,7 +64,7 @@ string
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default.nix)
 
 
 
@@ -88,7 +88,7 @@ true
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release.nix)
 
 
 
@@ -112,7 +112,7 @@ true
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release.nix)
 
 
 
@@ -136,7 +136,7 @@ true
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release.nix)
 
 
 
@@ -160,7 +160,7 @@ true
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/os-release.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/os-release.nix)
 
 
 
@@ -184,7 +184,7 @@ true
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays.nix)
 
 
 
@@ -208,7 +208,7 @@ config.nixowos.overlays.enable
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays.nix)
 
 
 
@@ -232,7 +232,7 @@ config.nixowos.overlays.enable
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays.nix)
 
 
 
@@ -256,7 +256,7 @@ config.nixowos.overlays.enable
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays.nix)
 
 
 
@@ -280,7 +280,7 @@ config.nixowos.overlays.enable
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays.nix)
 
 
 
@@ -304,7 +304,7 @@ config.nixowos.overlays.enable
 ```
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/overlays.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/overlays.nix)
 
 
 
@@ -325,6 +325,6 @@ boolean
 If ` specialArgs.osConfig.home-manager.useGlobalPkgs ` exists, then its negated value; otherwise, ` true `\.
 
 *Declared by:*
- - [/nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default\.nix](file:///nix/store/4l55jvjh9mh59zmln6hbzji0c8p306vc-source/src/default.nix)
+ - [/nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default\.nix](file:///nix/store/rzpjrhsjd3jnida4ydz86dwraf1pmbjg-source/src/default.nix)
 
 
