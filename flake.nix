@@ -3,14 +3,17 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    systems.url = "github:nix-systems/default";
+
     denix.url = "github:yunfachi/denix/rewrite";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-compat.url = "github:edolstra/flake-compat";
+    flake-compat.flake = false;
+
+    systems.url = "github:nix-systems/default";
+
     git-hooks-nix.url = "github:cachix/git-hooks.nix";
+    nuschtos-search.url = "github:NuschtOS/search";
+    nuschtos-search.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

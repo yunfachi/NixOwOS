@@ -12,9 +12,13 @@
         }:
         stdenv.mkDerivation (finalAttrs: {
           pname = "nixowos-icons";
-          version = "0-unstable-2025-08-05";
+          version = "0-unstable-2026-03-31";
 
-          src = self + /assets;
+          # Stylix issue https://github.com/yunfachi/NixOwOS/issues/5
+          src = {
+            outPath = self + /assets;
+            url = "https://github.com/yunfachi/NixOwOS/tree/master/assets";
+          };
 
           nativeBuildInputs = [ imagemagick ];
 
