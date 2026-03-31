@@ -12,9 +12,9 @@ A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed 
 
 ## Usage
 
-A full list of available NixOS module options can be found in [./nixos-options.md](./nixos-options.md).
+A full list of available NixOS module options can be found in [nixowos.ynf.sh/?scope=NixOS Module](https://nixowos.ynf.sh/?scope=NixOS%20Module).
 
-A full list of available Home Manager module options can be found in [./home-options.md](./home-options.md).
+A full list of available Home Manager module options can be found in [nixowos.ynf.sh/?scope=Home Manager Module](https://nixowos.ynf.sh/?scope=Home%20Manager%20Module).
 
 ## Installation (NixOS, Home Manager)
 
