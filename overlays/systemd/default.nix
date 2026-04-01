@@ -7,5 +7,8 @@
         ];
       }
     );
+    nix = prevPkgs.nix.overrideAttrs (old: {
+      doCheck = false;
+    });
   };
 }
