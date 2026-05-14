@@ -1,4 +1,4 @@
-{ self, ... }:
+{ root, ... }:
 {
   perSystem =
     { pkgs, ... }:
@@ -10,13 +10,13 @@
           lib,
           ...
         }:
-        stdenv.mkDerivation (finalAttrs: {
+        stdenv.mkDerivation (_finalAttrs: {
           pname = "nixowos-icons";
           version = "0-unstable-2026-03-31";
 
           # Stylix issue https://github.com/yunfachi/NixOwOS/issues/5
           src = {
-            outPath = self + /assets;
+            outPath = root + /assets;
             url = "https://github.com/yunfachi/NixOwOS/tree/master/assets";
           };
 

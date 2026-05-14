@@ -1,7 +1,7 @@
 {
   flake.overlays.neofetch = finalPkgs: prevPkgs: {
     neofetch = prevPkgs.neofetch.overrideAttrs (
-      finalAttrs: prevAttrs: {
+      _finalAttrs: _prevAttrs: {
         patches = [
           (finalPkgs.fetchpatch {
             url = "https://github.com/dylanaraps/neofetch/commit/413c32e55dc16f0360f8e84af2b59fe45505f81b.patch";

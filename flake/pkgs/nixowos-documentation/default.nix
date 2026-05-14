@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
   perSystem =
-    { pkgs, system, ... }:
+    { system, ... }:
     {
       packages.nixowos-documentation = inputs.nuschtos-search.packages.${system}.mkMultiSearch {
         baseHref = "/";

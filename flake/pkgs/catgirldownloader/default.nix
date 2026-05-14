@@ -5,10 +5,8 @@
       packages.catgirldownloader = pkgs.callPackage (
         {
           lib,
-          stdenv,
           fetchFromGitHub,
           python3,
-          glib,
           gtk4,
           libadwaita,
           gobject-introspection,

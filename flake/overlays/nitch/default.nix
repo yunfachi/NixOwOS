@@ -1,7 +1,7 @@
 {
   flake.overlays.nitch = finalPkgs: prevPkgs: {
     nitch = prevPkgs.nitch.overrideAttrs (
-      finalAttrs: prevAttrs: {
+      _finalAttrs: _prevAttrs: {
         patches = [
           ./nixowos_support.patch
           (finalPkgs.fetchpatch {
