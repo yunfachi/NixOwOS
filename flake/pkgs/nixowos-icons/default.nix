@@ -1,4 +1,4 @@
-{ self, ... }:
+{ root, ... }:
 {
   perSystem =
     { pkgs, ... }:
@@ -16,7 +16,7 @@
 
           # Stylix issue https://github.com/yunfachi/NixOwOS/issues/5
           src = {
-            outPath = self + /assets;
+            outPath = root + /assets;
             url = "https://github.com/yunfachi/NixOwOS/tree/master/assets";
           };
 
