@@ -2,69 +2,36 @@
   description = "Complete redesign of NixOS into NixOwOS";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz";
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
     denix.url = "github:yunfachi/denix/rewrite";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-compat.url = "github:edolstra/flake-compat";
-    flake-compat.flake = false;
 
     systems.url = "github:nix-systems/default";
 
-    git-hooks-nix.url = "github:cachix/git-hooks.nix";
+    git-hooks.url = "github:cachix/git-hooks.nix";
+
     nuschtos-search.url = "github:NuschtOS/search";
     nuschtos-search.inputs.nixpkgs.follows = "nixpkgs";
+
+    flake-compat.url = "github:edolstra/flake-compat";
+    flake-compat.flake = false;
   };
 
   outputs =
-    {
-      flake-parts,
-      denix,
-      self,
-      ...
-    }@inputs:
-    flake-parts.lib.mkFlake
+    inputs:
+    inputs.flake-parts.lib.mkFlake
       {
         inherit inputs;
-        specialArgs.delib = denix.lib;
+        specialArgs.root = ./.;
       }
       (
-        { config, delib, ... }:
+        { root, ... }:
         {
-          imports = [
-            denix.flakeModule
-          ]
-          ++ delib.umport {
-            paths = [
-              ./flake
-              ./src
-              ./pkgs
-              ./overlays
-            ];
-          };
-          systems = import inputs.systems;
-
-          denixSettings = {
-            generateSystems = false;
-            generateModules = false;
-          };
-
-          denix.imports = [ (denix.lib.moduleSystem "home" { }) ];
-
-          flake = {
-            nixosModules = {
-              default = self.nixosModules.nixowos;
-              nixowos = config.denixConfiguration.genModule {
-                moduleSystem = "nixos";
-              };
-            };
-
-            homeModules = {
-              default = self.homeModules.nixowos;
-              nixowos = config.denixConfiguration.genModule {
-                moduleSystem = "home";
-              };
-            };
+          imports = inputs.denix.lib.umport {
+            path = root + "/flake";
           };
         }
       );

@@ -8,11 +8,11 @@
     { cfg, ... }:
     {
       options.os-release = with delib; {
-        enable = description (boolOption true) "Whether to enable os-release configuration.";
+        enable = boolOption true "Whether to enable os-release configuration.";
 
-        changeId = description (boolOption true) "Whether to override the default distribution ID in the `os-release` file.";
-        changeName = description (boolOption true) "Whether to override the default distribution name in the `os-release` file.";
-        setIdLike = description (boolOption true) "Whether to set the `ID_LIKE` field in `os-release` file to \"nixos\".";
+        changeId = boolOption true "Whether to override the default distribution ID in the `os-release` file.";
+        changeName = boolOption true "Whether to override the default distribution name in the `os-release` file.";
+        setIdLike = boolOption true "Whether to set the `ID_LIKE` field in `os-release` file to \"nixos\".";
       };
 
       nixos.ifEnabled = lib.mkIf cfg.os-release.enable {

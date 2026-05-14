@@ -10,7 +10,7 @@
           lib,
           ...
         }:
-        stdenv.mkDerivation (finalAttrs: {
+        stdenv.mkDerivation (_finalAttrs: {
           pname = "nixowos-icons";
           version = "0-unstable-2026-03-31";
 
