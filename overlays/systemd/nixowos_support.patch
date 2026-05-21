@@ -1,0 +1,17 @@
+diff --git a/src/core/job.c b/src/core/job.c
+index 1cac09bd06..064276afde 100644
+--- a/src/core/job.c
++++ b/src/core/job.c
+@@ -710,10 +710,10 @@ static const struct {
+         int log_level;
+         const char *color, *word;
+ } job_done_messages[_JOB_RESULT_MAX] = {
+-        [JOB_DONE]        = { LOG_INFO,    ANSI_OK_COLOR,         "  OK  " },
++        [JOB_DONE]        = { LOG_INFO,    ANSI_OK_COLOR,         "  UwU " },
+         [JOB_CANCELED]    = { LOG_INFO,                                    },
+         [JOB_TIMEOUT]     = { LOG_ERR,     ANSI_HIGHLIGHT_RED,    " TIME " },
+-        [JOB_FAILED]      = { LOG_ERR,     ANSI_HIGHLIGHT_RED,    "FAILED" },
++        [JOB_FAILED]      = { LOG_ERR,     ANSI_HIGHLIGHT_RED,    "  o_O " },
+         [JOB_DEPENDENCY]  = { LOG_WARNING, ANSI_HIGHLIGHT_YELLOW, "DEPEND" },
+         [JOB_SKIPPED]     = { LOG_NOTICE,  ANSI_HIGHLIGHT,        " INFO " },
+         [JOB_INVALID]     = { LOG_INFO,                                    },

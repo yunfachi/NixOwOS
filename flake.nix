@@ -33,6 +33,12 @@
           imports = inputs.denix.lib.umport {
             path = root + "/flake";
           };
+
+          perSystem =
+            { pkgs, ... }:
+            {
+              formatter = pkgs.nixfmt-tree;
+            };
         }
       );
 }
