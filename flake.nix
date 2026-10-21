@@ -3,36 +3,47 @@
 
   inputs = {
     nixpkgs.url = "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz";
-
-    flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
-
-    denix.url = "github:yunfachi/denix/rewrite";
-
-    systems.url = "github:nix-systems/default";
-
-    git-hooks.url = "github:cachix/git-hooks.nix";
-
-    nuschtos-search.url = "github:NuschtOS/search";
-    nuschtos-search.inputs.nixpkgs.follows = "nixpkgs";
-
-    flake-compat.url = "github:edolstra/flake-compat";
-    flake-compat.flake = false;
   };
 
   outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake
-      {
-        inherit inputs;
-        specialArgs.root = ./.;
-      }
-      (
-        { root, ... }:
-        {
-          imports = inputs.denix.lib.umport {
-            path = root + "/flake";
-          };
-        }
-      );
+    {
+      self,
+      nixpkgs,
+      ...
+    }:
+    let
+      inherit (nixpkgs) lib;
+      systems = lib.systems.flakeExposed;
+      eachSystem = f: lib.genAttrs systems (system: f system nixpkgs.legacyPackages.${system});
+
+      devFlake =
+        (import (builtins.fetchurl {
+          url = "https://raw.githubusercontent.com/NixOS/flake-compat/f275e157c50c3a9a682b4c9b4aa4db7a4cd3b5f2/default.nix";
+          sha256 = "sha256:0nycwx0777d451k63ghp6p5lcv791kziqgkvqzmr1qwzywkdk1cj";
+        }) { src = ./dev; }).defaultNix;
+
+      devOutputs = devFlake.inputs.flake-parts.lib.mkFlake {
+        inputs = devFlake.inputs // {
+          nixowos = self;
+          self = devFlake;
+        };
+      } ./dev/config.nix;
+    in
+    {
+      inherit (devOutputs) checks formatter;
+
+      packages = eachSystem (_: pkgs: import ./packages { inherit pkgs; });
+
+      overlays = import ./overlays { inherit (self) packages; };
+
+      nixosModules = {
+        default = self.nixosModules.nixowos;
+        nixowos = ./nixos;
+      };
+
+      homeModules = {
+        default = self.homeModules.nixowos;
+        nixowos = ./home;
+      };
+    };
 }

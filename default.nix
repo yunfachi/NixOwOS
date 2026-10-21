@@ -1,10 +1,24 @@
-(import (
-  let
-    lock = builtins.fromJSON (builtins.readFile ./flake.lock);
-    nodeName = lock.nodes.root.inputs.flake-compat;
-  in
-  fetchTarball {
-    url = lock.nodes.${nodeName}.locked.url or "https://github.com/edolstra/flake-compat/archive/${lock.nodes.${nodeName}.locked.rev}.tar.gz";
-    sha256 = lock.nodes.${nodeName}.locked.narHash;
-  }
-) { src = ./.; }).defaultNix
+{
+  nixosModules = rec {
+    nixowos = builtins.warn ''
+      `(import (builtins.fetchGit "https://github.com/yunfachi/nixowos")).nixosModules.default` is deprecated, use this instead:
+      {
+        imports = [
+          "''${builtins.fetchGit { url = "https://github.com/yunfachi/nixowos"; }}/nixos"
+        ];
+      }
+    '' ./nixos;
+    default = nixowos;
+  };
+  homeModules = rec {
+    nixowos = builtins.warn ''
+      `(import (builtins.fetchGit "https://github.com/yunfachi/nixowos")).homeModules.default` is deprecated, use this instead:
+      {
+        imports = [
+          "''${builtins.fetchGit { url = "https://github.com/yunfachi/nixowos"; }}/home-manager"
+        ];
+      }
+    '' ./home-manager;
+    default = nixowos;
+  };
+}

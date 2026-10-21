@@ -29,7 +29,6 @@ To enable NixOwOS, add `inputs.nixowos` to your Flake and import both the NixOS 
       url = "github:yunfachi/nixowos";
       # Optional:
       # inputs.nixpkgs.follows = "nixpkgs";
-      # inputs.denix.follows = "denix";
     };
   };
 
@@ -72,17 +71,11 @@ If you use both NixOS and Home Manager, add it to **both** configurations. Other
 Import directly from the Git repository:
 
 ```nix
-{ pkgs, lib, ... }:
-let
-  nixowos = import (builtins.fetchGit {
-    url = "https://github.com/yunfachi/nixowos";
-  });
-in 
 {
   imports = [
-    nixowos.nixosModules.default
+    "${builtins.fetchGit { url = "https://github.com/yunfachi/nixowos"; }}/nixos"
     # or, if you're using Home Manager:
-    # nixowos.homeModules.default
+    # "${builtins.fetchGit { url = "https://github.com/yunfachi/nixowos"; }}/home-manager"
   ];
 
   # Enable NixOwOS
