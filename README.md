@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yunfachi/NixOwOS/master/assets/nixowos-snowflake-colours.svg" width="250px" alt="NixOwOS logo">
+  <img src="https://raw.githubusercontent.com/yunfachi/nixowos/master/assets/nixowos-snowflake-colours.svg" width="250px" alt="NixOwOS logo">
 </p>
 
 A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed distro, and more.
@@ -12,9 +12,9 @@ A complete redesign of NixOS into **NixOwOS**, featuring updated logos, renamed 
 
 ## Usage
 
-A full list of available NixOS module options can be found in [nixowos.ynf.sh/?scope=NixOS Module](https://nixowos.ynf.sh/?scope=NixOS%20Module).
+A full list of available NixOS module options can be found in [nixowos.ynf.sh/nixos-configuration-options](https://nixowos.ynf.sh/nixos-configuration-options).
 
-A full list of available Home Manager module options can be found in [nixowos.ynf.sh/?scope=Home Manager Module](https://nixowos.ynf.sh/?scope=Home%20Manager%20Module).
+A full list of available Home Manager module options can be found in [nixowos.ynf.sh/home-manager-configuration-options](https://nixowos.ynf.sh/home-manager-configuration-options).
 
 ## Installation (NixOS, Home Manager)
 
