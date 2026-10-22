@@ -43,7 +43,12 @@
 
       homeModules = {
         default = self.homeModules.nixowos;
-        nixowos = ./home;
+        nixowos = ./home-manager;
+      };
+
+      homeManagerModules = {
+        default = self.homeManagerModules.nixowos;
+        nixowos = ./home-manager;
       };
     };
 }
