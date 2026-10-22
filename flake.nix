@@ -32,7 +32,13 @@
     {
       inherit (devOutputs) checks formatter;
 
-      packages = eachSystem (_: pkgs: import ./packages { inherit pkgs; });
+      packages = eachSystem (
+        _: pkgs:
+        import ./packages { inherit pkgs; }
+        // {
+          docs = pkgs.callPackage ./docs { inherit self; };
+        }
+      );
 
       overlays = import ./overlays { inherit (self) packages; };
 

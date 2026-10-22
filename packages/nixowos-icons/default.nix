@@ -11,7 +11,7 @@ stdenv.mkDerivation (_finalAttrs: {
   # Stylix issue https://github.com/yunfachi/NixOwOS/issues/5
   src = {
     outPath = ../../assets;
-    url = "https://github.com/yunfachi/NixOwOS/tree/master/assets";
+    url = "https://github.com/yunfachi/nixowos/tree/master/assets";
   };
 
   nativeBuildInputs = [ imagemagick ];
@@ -42,7 +42,7 @@ stdenv.mkDerivation (_finalAttrs: {
 
   meta = {
     description = "Icons of the NixOwOS logo, in Freedesktop Icon Directory Layout";
-    homepage = "https://github.com/yunfachi/NixOwOS";
+    homepage = "https://github.com/yunfachi/nixowos";
     license = lib.licenses.cc-by-40;
     maintainers = with lib.maintainers; [ yunfachi ];
     platforms = lib.platforms.all;
