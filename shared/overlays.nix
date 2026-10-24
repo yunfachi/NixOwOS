@@ -27,7 +27,7 @@ in
         ) overlays
       );
 
-  config = lib.mkIf cfg.useNixpkgsModule {
+  config = lib.mkIf (cfg.useNixpkgsModule or true) {
     nixpkgs.overlays = builtins.concatMap (
       name: lib.optionals cfg.overlays.${name} [ overlays.${name} ]
     ) (builtins.attrNames overlays);
