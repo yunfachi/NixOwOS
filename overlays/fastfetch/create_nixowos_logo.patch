@@ -1,8 +1,6 @@
-diff --git a/src/logo/ascii/nixowos.txt b/src/logo/ascii/nixowos.txt
-new file mode 100644
-index 00000000..e169f578
---- /dev/null
-+++ b/src/logo/ascii/nixowos.txt
+diff --git a/src/logo/ascii/n/nixowos.txt b/src/logo/ascii/n/nixowos.txt
+--- a/src/logo/ascii/n/nixowos.txt
++++ b/src/logo/ascii/n/nixowos.txt
 @@ -0,0 +1,20 @@
 +$1           ▗▄▄▄       $2▗▄▄▄▄    ▄▄▄▖
 +$1           ▜███▙       $2▜███▙  ▟███▛
@@ -24,27 +22,27 @@ index 00000000..e169f578
 +$1           ▟███▛▜███▙$2▄▄▟$5▀▘  $2▜███▙
 +$1          ▟███▛$2▄▄$1▜███▙       $2▜███▙
 +$1          ▝▀▀▀    ▀▀▀▀▘       $2▀▀▀▘
-diff --git a/src/logo/builtin.c b/src/logo/builtin.c
-index 35eabdb6..b8df3e09 100644
---- a/src/logo/builtin.c
-+++ b/src/logo/builtin.c
-@@ -3287,6 +3287,19 @@ static const FFlogo N[] = {
-             FF_COLOR_FG_CYAN,
+diff --git a/src/logo/ascii/n.inc b/src/logo/ascii/n.inc
+--- a/src/logo/ascii/n.inc
++++ b/src/logo/ascii/n.inc
+@@ -148,6 +148,20 @@
          },
      },
+     #endif
++    #ifdef FASTFETCH_DATATEXT_LOGO_NIXOWOS
 +    // NixOwOS
 +    {
-+        .names = {"NixOwOS"},
++        .names = { "NixOwOS" },
 +        .lines = FASTFETCH_DATATEXT_LOGO_NIXOWOS,
 +        .colors = {
-+            "38;2;82;119;195",
-+            "38;2;126;186;228",
-+            "38;2;223;144;175",
-+            "38;2;45;120;158",
-+            "38;2;95;146;211",
++            FF_COLOR_FG_RGB "82;119;195",
++            FF_COLOR_FG_RGB "126;186;228",
++            FF_COLOR_FG_RGB "223;144;175",
++            FF_COLOR_FG_RGB "45;120;158",
++            FF_COLOR_FG_RGB "95;146;211",
 +        },
-+
 +    },
++    #endif
+     #ifdef FASTFETCH_DATATEXT_LOGO_NETBSD
      // NetBSD
      {
-         .names = {"NetBSD"},
